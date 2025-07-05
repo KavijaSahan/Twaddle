@@ -15,8 +15,8 @@ const notificationSchema = new mongoose.Schema(
     type: {
       type: String,
       required: true,
-      enum: ["follow", "like", "comment"],    
-    }, 
+      enum: ["follow", "like", "comment"],
+    },
     post: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Post",
@@ -30,5 +30,7 @@ const notificationSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+const Notification = mongoose.model("Notification", notificationSchema); // GPT
 
 export default Notification;
